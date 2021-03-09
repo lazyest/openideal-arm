@@ -1,0 +1,11 @@
+[Unit]
+Description = hossted app starup
+After       = syslog.target network.target
+
+[Service]
+ExecStart={{app_dir}}/startup.sh
+WorkingDirectory={{app_dir}}
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
